@@ -1,7 +1,13 @@
-export default function App() {
+import { memo } from 'react'
+import { Map } from './components/map.tsx'
+import { useMapData } from './hooks/use-map-data.ts'
+
+
+export default memo(function App() {
+
+  const mapData = useMapData();
+
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
-}
+    mapData ? <Map {...mapData} /> : 'Loading...'
+  );
+})
