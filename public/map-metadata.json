@@ -1,12 +1,12 @@
 {
     "containerOptions": {
         "coordinates": [
-            11.793,
-            76.165
+            10.1632,
+            76.6413
         ],
         "height": "100vh",
         "width": "100vw",
-        "zoomLevel": 13
+        "zoomLevel": 7
     },
     "tileLayerOptions": {
         "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",

@@ -1,18 +1,22 @@
 import "leaflet/dist/leaflet.css";
-import { FC, memo, useRef } from "react";
+import { FC, memo } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { IMapProps } from "../types";
+import { ICustomMarkerProps, IMapProps } from "../types";
+import { CustomMarker } from "./marker/custom-marker";
 
-export const Map: FC<IMapProps> = memo(({ containerOptions: { coordinates, zoomLevel, height, width }, tileLayerOptions: { attribution, url } }) => {
+export const Map: FC<IMapProps> = memo(({ containerOptions: { coordinates, zoomLevel, height, width }, tileLayerOptions: { attribution, url }, districts }) => {
 
-    const mapRef = useRef(null);
+    const renderMarkers = ({ coordinates, attractions, name, image }: ICustomMarkerProps) => {
+        return <CustomMarker key={name} name={name} coordinates={coordinates} attractions={attractions} image={image} />
+    }
 
     return (
-        <MapContainer center={coordinates} zoom={zoomLevel} ref={mapRef} style={{ height, width }}>
+        <MapContainer center={coordinates} zoom={zoomLevel} style={{ height, width }}>
             <TileLayer
                 attribution={attribution}
                 url={url}
             />
+            {districts.map(renderMarkers)}
         </MapContainer>
     );
 });

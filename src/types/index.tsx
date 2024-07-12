@@ -13,6 +13,18 @@ interface ITileLayerParams {
 }
 
 export interface IMapProps {
-    containerOptions: IMapContainerParams,
-    tileLayerOptions: ITileLayerParams
+    containerOptions: IMapContainerParams;
+    tileLayerOptions: ITileLayerParams;
+    districts: Array<IDistrict>;
+}
+
+export interface ICustomMarkerProps extends IDistrict {
+}
+export interface ICustomPopupProps extends Omit<IDistrict, 'coordinates'> {
+}
+
+export interface IDistrict extends Pick<IMapContainerParams, 'coordinates'> {
+    name: string;
+    image: string;
+    attractions: Array<string>;
 }
