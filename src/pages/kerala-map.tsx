@@ -1,15 +1,18 @@
 import { memo } from "react";
+import { Loader } from "../components/loader.tsx";
 import { MapWithMarker } from "../components/map/map-with-marker.tsx";
 import { useFetch } from "../hooks/use-fetch.ts";
 import { IMapWithMarkerProps as IMarkerMapOptions } from '../types/index.tsx';
-import { Loader } from "../components/loader.tsx";
+import { ErrorPage } from "./error-page.tsx";
 
 
-export default memo(function KeralaApp() {
+export default memo(function KeralaMap() {
 
-    const mapData = useFetch<IMarkerMapOptions>('/map-data/marker.json');
+    const { data, hasError } = useFetch<IMarkerMapOptions>('/map-data/marker.json');
+
+    if (hasError) return <ErrorPage />
 
     return (
-        (mapData) ? <MapWithMarker {...mapData} /> : <Loader />
+        (data) ? <MapWithMarker {...data} /> : <Loader />
     );
 })

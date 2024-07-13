@@ -1,15 +1,18 @@
 import { memo } from 'react';
+import { Loader } from '../components/loader';
 import { MapWithPolygon } from '../components/map/map-with-polygon';
 import { useFetch } from '../hooks/use-fetch';
 import { IMapWithPolygonProps } from '../types';
-import { Loader } from '../components/loader';
+import { ErrorPage } from './error-page';
 
 
 export default memo(function USAMap() {
 
-    const mapData = useFetch<IMapWithPolygonProps>('/map-data/polygon.json');
+    const { data, hasError } = useFetch<IMapWithPolygonProps>('/map-data/polygon.json');
+
+    if (hasError) return <ErrorPage />;
 
     return (
-        (mapData) ? <MapWithPolygon {...mapData} /> : <Loader />
+        (data) ? <MapWithPolygon {...data} /> : <Loader />
     );
-})
+});
