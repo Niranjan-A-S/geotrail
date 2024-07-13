@@ -1,8 +1,8 @@
 import "leaflet/dist/leaflet.css";
 import { FC, memo, useCallback } from "react";
-import { ICustomMarkerProps, IMapWithMarkerProps } from "../types";
+import { ICustomMarkerProps, IMapWithMarkerProps } from "../../types";
+import { CustomMarker } from "../marker/custom-marker";
 import { MapLayout } from "./map-layout";
-import { CustomMarker } from "./marker/custom-marker";
 
 export const MapWithMarker: FC<IMapWithMarkerProps> = memo(({ containerOptions, tileLayerOptions, districts }) => {
 
