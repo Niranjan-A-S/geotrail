@@ -51,3 +51,10 @@ export interface IDistrict extends Pick<IMapContainerParams, 'coordinates'> {
     image: string;
     attractions: Array<string>;
 }
+
+export interface IBannerProps {
+    imageSrc: string;
+    title: string;
+    subtitle: string;
+    path: string;
+}
