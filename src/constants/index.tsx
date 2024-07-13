@@ -1,3 +1,4 @@
+import { Icon } from "leaflet";
 import { IBannerProps as IBannerData } from "../types";
 
 export const BANNER_DATA: Record<'kerala' | 'usa', IBannerData> = {
@@ -16,3 +17,8 @@ export const BANNER_DATA: Record<'kerala' | 'usa', IBannerData> = {
 }
 
 export const COPYRIGHT = "© 2024 Niranjan A S. All rights reserved."
+
+export const markerIcon = new Icon({
+    iconUrl: "/marker.png",
+    iconSize: [38, 38],
+}) 
