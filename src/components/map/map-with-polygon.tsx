@@ -24,13 +24,13 @@ export const MapWithPolygon: FC<IMapWithPolygonProps> = memo(({ containerOptions
         color: "white",
     }), [])
 
-    const onMouseOver = useCallback((e: LeafletMouseEvent) => {
-        const layer = e.target;
+    const onMouseOver = useCallback((event: LeafletMouseEvent) => {
+        const layer = event.target;
         layer.setStyle(hoverLayerOptions)
     }, [hoverLayerOptions])
 
-    const onMouseOut = useCallback((e: LeafletMouseEvent, density: number) => {
-        const layer = e.target;
+    const onMouseOut = useCallback((event: LeafletMouseEvent, density: number) => {
+        const layer = event.target;
         layer.setStyle(getPathLayerOptions(density));
     }, [getPathLayerOptions])
 
