@@ -9,7 +9,7 @@ export const HomePage = memo(() => {
     return (
         <div className="flex flex-col m in-h-[100dvh]">
             <Header />
-            <main className="flex-1 bg-background">
+            <main className="flex-1">
                 <div className="container px-4 md:px-6 py-12 md:py-24 lg:py-32">
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
                         <Banner {...BANNER_DATA.kerala} />

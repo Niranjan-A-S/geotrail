@@ -14,3 +14,5 @@ export const BANNER_DATA: Record<'kerala' | 'usa', IBannerData> = {
         path: "/map/usa"
     }
 }
+
+export const COPYRIGHT = "© 2024 Niranjan A S. All rights reserved."
