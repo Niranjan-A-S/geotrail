@@ -2,6 +2,8 @@
 
 This project is a React TypeScript application built with Vite, Tailwind CSS, and React Router DOM, utilizing React Leaflet for mapping functionalities. The application features an interactive map of Kerala with markers for its districts and a USA state map displaying population density using polygon layers. Lazy loading is implemented to optimize the loading performance.
 
+### [Live Demo](https://geotrail.vercel.app/)
+
 ## Features
 
 - **Kerala Map with District Markers**: Interactive map highlighting each district of Kerala with markers.
@@ -18,3 +20,4 @@ This project is a React TypeScript application built with Vite, Tailwind CSS, an
 - **React Leaflet**: React components for Leaflet maps.
 - **Lazy Loading**: Optimization technique to load components and data only when needed.
 - **Error Handling**: Custom error page in case of data fetching error.
+
