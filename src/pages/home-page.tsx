@@ -5,7 +5,7 @@ import { Header } from "../components/home/header";
 import { BANNER_DATA } from "../constants";
 
 
-export const HomePage = memo(() => {
+export default memo(function HomePage() {
     return (
         <div className="flex flex-col m in-h-[100dvh]">
             <Header />
