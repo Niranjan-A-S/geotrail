@@ -1,0 +1,201 @@
+{
+    "containerOptions": {
+        "coordinates": [
+            10.1632,
+            76.6413
+        ],
+        "style": {
+            "height": "100vh",
+            "width": "100vw"
+        },
+        "zoomLevel": 7
+    },
+    "tileLayerOptions": {
+        "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+        "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    },
+    "districts": [
+        {
+            "name": "Thiruvananthapuram",
+            "attractions": [
+                "Padmanabhaswamy Temple",
+                "Napier Museum",
+                "Kovalam Beach"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/thiruvananthapuram20131107171322_12_1.jpg",
+            "coordinates": [
+                8.524139,
+                76.936638
+            ]
+        },
+        {
+            "name": "Kollam",
+            "attractions": [
+                "Ashtamudi Lake",
+                "Thangassery Beach",
+                "Sasthamkotta Lake"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/kollam20131107120543_6_1.jpg",
+            "coordinates": [
+                8.893211,
+                76.614139
+            ]
+        },
+        {
+            "name": "Pathanamthitta",
+            "attractions": [
+                "Sabarimala Temple",
+                "Perunthenaruvi Waterfall",
+                "Konni Elephant Reserve"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/pathanamthitta20131107120608_11_1.jpg",
+            "coordinates": [
+                9.2647,
+                76.7871
+            ]
+        },
+        {
+            "name": "Alappuzha",
+            "attractions": [
+                "Alappuzha Beach",
+                "Backwaters",
+                "Pathiramanal Island"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/alappuzha20131108125704_1_1.jpg",
+            "coordinates": [
+                9.4981,
+                76.3388
+            ]
+        },
+        {
+            "name": "Kottayam",
+            "attractions": [
+                "Kumarakom Bird Sanctuary",
+                "Vembanad Lake",
+                "Ettumanoor Mahadeva Temple"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/kottayam20131107120556_7_1.jpg",
+            "coordinates": [
+                9.5916,
+                76.5222
+            ]
+        },
+        {
+            "name": "Idukki",
+            "attractions": [
+                "Idukki Dam",
+                "Periyar National Park",
+                "Munnar Hill Station"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/idukki20131107120530_3_1.jpg",
+            "coordinates": [
+                9.8497,
+                76.9747
+            ]
+        },
+        {
+            "name": "Ernakulam",
+            "attractions": [
+                "Fort Kochi",
+                "Mattancherry Palace",
+                "Cherai Beach"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/ernakulam20131107120302_2_1.jpg",
+            "coordinates": [
+                9.9312,
+                76.2673
+            ]
+        },
+        {
+            "name": "Thrissur",
+            "attractions": [
+                "Vadakkunnathan Temple",
+                "Athirappilly Falls",
+                "Thrissur Pooram"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/thrissur20131107171306_13_1.jpg",
+            "coordinates": [
+                10.5276,
+                76.2144
+            ]
+        },
+        {
+            "name": "Palakkad",
+            "attractions": [
+                "Silent Valley National Park",
+                "Palakkad Fort",
+                "Malampuzha Dam"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/palakkad20131108120416_10_1.jpg",
+            "coordinates": [
+                10.7867,
+                76.6548
+            ]
+        },
+        {
+            "name": "Malappuram",
+            "attractions": [
+                "Kadalundi Bird Sanctuary",
+                "Nilambur Teak Museum",
+                "Adyanpara Waterfalls"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/malappuram20161217111159_9_1.jpg",
+            "coordinates": [
+                11.0720,
+                76.0652
+            ]
+        },
+        {
+            "name": "Kozhikode",
+            "attractions": [
+                "Kozhikode Beach",
+                "Beypore",
+                "Kappad Beach"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/kozhikode20131108120355_8_1.jpg",
+            "coordinates": [
+                11.2588,
+                75.7804
+            ]
+        },
+        {
+            "name": "Wayanad",
+            "attractions": [
+                "Wayanad Wildlife Sanctuary",
+                "Edakkal Caves",
+                "Pookode Lake"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/wayanad20131108120427_14_1.jpg",
+            "coordinates": [
+                11.6856,
+                76.1306
+            ]
+        },
+        {
+            "name": "Kannur",
+            "attractions": [
+                "St. Angelo Fort",
+                "Payyambalam Beach",
+                "Muzhappilangad Drive-in Beach"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/kannur20131108120246_4_1.jpg",
+            "coordinates": [
+                11.8768,
+                75.3737
+            ]
+        },
+        {
+            "name": "Kasaragod",
+            "attractions": [
+                "Bekal Fort",
+                "Chandragiri Fort",
+                "Kappil Beach"
+            ],
+            "image": "https://www.keralatourism.org/images/district/thumb/kasaragod20131108120222_5_1.jpg",
+            "coordinates": [
+                12.4995,
+                74.9865
+            ]
+        }
+    ]
+}

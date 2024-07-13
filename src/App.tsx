@@ -1,15 +1,14 @@
-import { memo } from 'react'
-import { Map } from './components/map.tsx'
-import { useMapData } from './hooks/use-map-data.ts'
-import { useDistricts } from './hooks/use-districts.ts';
+import { memo } from 'react';
+import { MapWithMarker } from './components/map-with-marker.tsx';
+import { useFetch } from './hooks/use-fetch.ts';
+import { IMapWithMarkerProps as IMarkerMapOptions } from './types/index.tsx';
 
 
 export default memo(function App() {
 
-  const mapData = useMapData();
-  const districts = useDistricts();
+  const mapData = useFetch<IMarkerMapOptions>('./marker-map.json');
 
   return (
-    (mapData && districts) ? <Map {...mapData} districts={districts} /> : 'Loading...'
+    (mapData) ? <MapWithMarker {...mapData} /> : 'Loading...'
   );
 })

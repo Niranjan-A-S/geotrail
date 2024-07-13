@@ -1,10 +1,13 @@
 import { LatLngExpression } from "leaflet";
+import { ReactNode } from "react";
 
 interface IMapContainerParams {
     coordinates: LatLngExpression;
     zoomLevel: number;
-    height: string;
-    width: string;
+    style: {
+        height: string;
+        width: string;
+    }
 }
 
 interface ITileLayerParams {
@@ -12,9 +15,13 @@ interface ITileLayerParams {
     url: string;
 }
 
-export interface IMapProps {
+export interface IMapLayoutProps {
     containerOptions: IMapContainerParams;
     tileLayerOptions: ITileLayerParams;
+    onRenderBody(): ReactNode;
+}
+
+export interface IMapWithMarkerProps extends Omit<IMapLayoutProps, 'onRenderBody'> {
     districts: Array<IDistrict>;
 }
 
