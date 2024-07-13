@@ -6,7 +6,7 @@ import { BANNER_DATA } from "../constants";
 
 export default memo(function HomePage() {
     return (
-        <div className="flex flex-col m in-h-[100dvh]">
+        <div className="flex flex-col h-screen">
             <Header />
             <main className="flex-1">
                 <div className="container px-4 md:px-6 py-12 md:py-24 lg:py-32">
