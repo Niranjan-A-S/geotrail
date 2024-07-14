@@ -1,7 +1,7 @@
 import { Icon } from 'leaflet';
 import { IBannerProps as IBannerData } from '../types';
 
-export const BANNER_DATA: Record<'kerala' | 'usa', IBannerData> = {
+export const BANNER_DATA: Record<string, IBannerData> = {
     kerala: {
         imageSrc: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2VyYWxhfGVufDB8fDB8fHww',
         title: 'Map of Districts in Kerala',
@@ -13,6 +13,12 @@ export const BANNER_DATA: Record<'kerala' | 'usa', IBannerData> = {
         title: 'Population Density Map of USA',
         subtitle: 'Visualize the population density across the United States.',
         path: '/map/usa'
+    },
+    current: {
+        imageSrc: 'https://t3.ftcdn.net/jpg/03/41/95/04/240_F_341950409_Gq1sN2OqYgRZrUTvPohSmgQVubaqzlA5.jpg',
+        title: 'Your Location',
+        subtitle: 'Your current location on the map.',
+        path: '/map/you-are-here'
     }
 };
 

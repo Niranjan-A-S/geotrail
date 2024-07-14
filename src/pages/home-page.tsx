@@ -12,6 +12,7 @@ export default memo(() => (
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
                     <Banner {...BANNER_DATA.kerala} />
                     <Banner {...BANNER_DATA.usa} />
+                    <Banner {...BANNER_DATA.current} />
                 </div>
             </div>
         </main>

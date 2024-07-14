@@ -15,14 +15,19 @@ const USAMap = withSuspense(
   lazy(() => import('./pages/usa-map.tsx')),
   createElement(Loader)
 );
+const CurrentLocationMap = withSuspense(
+  lazy(() => import('./pages/current-location-map.tsx')),
+  createElement(Loader)
+);
 
 export const AppRouter = memo(() => <BrowserRouter>
-    <Routes>
-      <Route path="/" element={createElement(HomePage)} />
-      <Route path="map" >
-        <Route path="kerala" element={createElement(KeralaMap)} />
-        <Route path="usa" element={createElement(USAMap)} />
-      </Route>
-    </Routes>
+  <Routes>
+    <Route path="/" element={createElement(HomePage)} />
+    <Route path="map" >
+      <Route path="kerala" element={createElement(KeralaMap)} />
+      <Route path="usa" element={createElement(USAMap)} />
+      <Route path="you-are-here" element={createElement(CurrentLocationMap)} />
+    </Route>
+  </Routes>
 </BrowserRouter>);
 

@@ -1,4 +1,4 @@
-import { LatLngExpression } from 'leaflet';
+import { LatLng, LatLngExpression } from 'leaflet';
 import { ReactNode } from 'react';
 
 interface IMapContainerParams {
@@ -23,6 +23,8 @@ export interface IMapLayoutProps {
 
 export interface IMapWithMarkerProps extends Omit<IMapLayoutProps, 'onRenderBody'> {
     districts: Array<IDistrict>;
+}
+export interface IMapWithEventsProps extends Omit<IMapLayoutProps, 'onRenderBody'> {
 }
 
 export interface IPolygonFeature {
@@ -57,4 +59,9 @@ export interface IBannerProps {
     title: string;
     subtitle: string;
     path: string;
+}
+
+export interface ILocationMarkerProps {
+    onLocationFound: (position: LatLng) => void;
+    coordinates: LatLng | null;
 }
