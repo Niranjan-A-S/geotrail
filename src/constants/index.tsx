@@ -15,7 +15,7 @@ export const BANNER_DATA: Record<string, IBannerData> = {
         path: '/map/usa'
     },
     current: {
-        imageSrc: 'https://t3.ftcdn.net/jpg/03/41/95/04/240_F_341950409_Gq1sN2OqYgRZrUTvPohSmgQVubaqzlA5.jpg',
+        imageSrc: 'https://scontent.fblr22-2.fna.fbcdn.net/v/t39.30808-6/299293518_409950387901015_1604858568447116354_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=z5M-lR__Fl4Q7kNvgFzpclr&_nc_ht=scontent.fblr22-2.fna&oh=00_AYA3uxfDfYxihcpEc-NkkbFiEJFBjKrVgExHrNzIGaX3rg&oe=669935E0',
         title: 'Your Location',
         subtitle: 'Your current location on the map.',
         path: '/map/you-are-here'
