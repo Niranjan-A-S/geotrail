@@ -7,7 +7,7 @@ import { IBannerProps } from '../types';
 
 export default memo(() => {
 
-    const renderBanners = useCallback((data: IBannerProps) => <Banner {...data} />, []);
+    const renderBanners = useCallback((data: IBannerProps) => <Banner key={data.title} {...data} />, []);
 
     return (
         <div className="flex flex-col h-screen">

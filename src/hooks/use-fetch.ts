@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { fetchData } from '../utils';
 
 export interface IResponse<T> {
     data?: T | null;
@@ -12,9 +13,8 @@ export const useFetch = <T>(endpoint: string, options?: RequestInit): IResponse<
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch(endpoint, options);
-                const json = await response.json();
-                setData(json);
+                const data = await fetchData(endpoint, options);
+                setData(data);
             } catch (error) {
                 setHasError(true);
             }

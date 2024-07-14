@@ -43,15 +43,19 @@ export interface IMapWithPolygonProps extends Omit<IMapLayoutProps, 'onRenderBod
     features: Array<IPolygonFeature>
 }
 
-export interface ICustomMarkerProps extends IDistrict {
+export interface ICustomMarkerProps extends ICustomPopupProps {
+    coordinates: LatLngExpression;
 }
 export interface ICustomPopupProps extends Omit<IDistrict, 'coordinates'> {
+    address_line1?: string;
+    country?: string;
+    state?: string;
 }
 
 export interface IDistrict extends Pick<IMapContainerParams, 'coordinates'> {
-    name: string;
-    image: string;
-    attractions: Array<string>;
+    name?: string;
+    image?: string;
+    attractions?: Array<string>;
 }
 
 export interface IBannerProps {

@@ -4,9 +4,9 @@ import { ILocationMarkerProps } from '../../types';
 import { CustomMarker } from './custom-marker';
 
 export const CurrentLocationMarker: FC<ILocationMarkerProps> = memo(({ onLocationFound, coordinates }) => {
-    useCurrentLocation(onLocationFound);
+    const details = useCurrentLocation({ onLocationFound, coordinates });
 
-    return coordinates && (
-        <CustomMarker coordinates={coordinates} attractions={[]} name={''} image={''} />
+    return (coordinates && details) && (
+        <CustomMarker coordinates={coordinates} name={details.address_line1} country={details.country} state={details.state} />
     );
 });
