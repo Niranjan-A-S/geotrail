@@ -18,5 +18,5 @@ export const useCurrentLocation = ({ onLocationFound, coordinates }: ILocationMa
         getPlaceDetails(coordinates).then(setPlaceDetails);
     }, [map, coordinates?.lat, coordinates?.lng]);
 
-    return useMemo(() => ({ placeDetails }), [placeDetails]);
+    return useMemo(() => (placeDetails), [placeDetails]);
 };
