@@ -1,5 +1,5 @@
-import { FC, memo } from "react";
-import { COPYRIGHT } from "../../constants";
+import { FC, memo } from 'react';
+import { COPYRIGHT } from '../../constants';
 
 export const Footer: FC = memo(() => (
     <footer className="p-6 md:py-12 w-full">
@@ -7,4 +7,4 @@ export const Footer: FC = memo(() => (
             {COPYRIGHT}
         </div>
     </footer>
-))
+));

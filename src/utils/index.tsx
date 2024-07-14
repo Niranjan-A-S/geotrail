@@ -1,17 +1,20 @@
-export function getColor(density: number) {
-    return density > 1000
-        ? "#800026"
-        : density > 500
-            ? "#BD0026"
-            : density > 200
-                ? "#E31A1C"
-                : density > 100
-                    ? "#FC4E2A"
-                    : density > 50
-                        ? "#FD8D3C"
-                        : density > 20
-                            ? "#FEB24C"
-                            : density > 10
-                                ? "#FED976"
-                                : "#FFEDA0";
+export function getColorBasedOnDensity(density: number) {
+    switch (true) {
+        case density > 1000:
+            return '#800026';
+        case density > 500:
+            return '#BD0026';
+        case density > 200:
+            return '#E31A1C';
+        case density > 100:
+            return '#FC4E2A';
+        case density > 50:
+            return '#FD8D3C';
+        case density > 20:
+            return '#FEB24C';
+        case density > 10:
+            return '#FED976';
+        default:
+            return '#FFEDA0';
+    }
 }

@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 
 export const MapIcon = memo((props: React.SVGProps<SVGSVGElement>) => (
     <svg

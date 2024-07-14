@@ -1,5 +1,5 @@
-import { LatLngExpression } from "leaflet";
-import { ReactNode } from "react";
+import { LatLngExpression } from 'leaflet';
+import { ReactNode } from 'react';
 
 interface IMapContainerParams {
     coordinates: LatLngExpression;

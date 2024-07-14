@@ -6,7 +6,7 @@ import { IMapWithPolygonProps } from '../types';
 import { ErrorPage } from './error-page';
 
 
-export default memo(function USAMap() {
+export default memo(() => {
 
     const { data, hasError } = useFetch<IMapWithPolygonProps>('/map-data/polygon.json');
 

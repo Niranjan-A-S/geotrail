@@ -1,6 +1,6 @@
-import { FC, memo } from "react";
-import { IBannerProps } from "../../types";
-import { Link } from "react-router-dom";
+import { FC, memo } from 'react';
+import { IBannerProps } from '../../types';
+import { Link } from 'react-router-dom';
 
 export const Banner: FC<IBannerProps> = memo(({ imageSrc, path, title, subtitle }) => (
     <Link to={path}>
@@ -14,4 +14,4 @@ export const Banner: FC<IBannerProps> = memo(({ imageSrc, path, title, subtitle 
         <h2 className="mt-4 text-2xl font-bold">{title}</h2>
         <p className="mt-2 text-muted-foreground">{subtitle}</p>
     </Link >
-))
+));

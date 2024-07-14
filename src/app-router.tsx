@@ -16,8 +16,7 @@ const USAMap = withSuspense(
   createElement(Loader)
 );
 
-export const AppRouter = memo(() => {
-  return <BrowserRouter>
+export const AppRouter = memo(() => <BrowserRouter>
     <Routes>
       <Route path="/" element={createElement(HomePage)} />
       <Route path="map" >
@@ -25,6 +24,5 @@ export const AppRouter = memo(() => {
         <Route path="usa" element={createElement(USAMap)} />
       </Route>
     </Routes>
-  </BrowserRouter>
-});
+</BrowserRouter>);
 

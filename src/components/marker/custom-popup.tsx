@@ -1,7 +1,7 @@
-import { FC, memo, useCallback } from "react";
-import { Popup } from "react-leaflet";
-import { AttractionItem } from "./attraction-item";
-import { ICustomPopupProps } from "../../types";
+import { FC, memo, useCallback } from 'react';
+import { Popup } from 'react-leaflet';
+import { AttractionItem } from './attraction-item';
+import { ICustomPopupProps } from '../../types';
 
 export const CustomPopup: FC<ICustomPopupProps> = memo(({ attractions, name, image }) => {
 
