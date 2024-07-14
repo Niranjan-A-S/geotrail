@@ -1,7 +1,8 @@
 import { LeafletMouseEvent } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { FC, memo, useCallback, useMemo } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { Polygon } from 'react-leaflet';
+import { hoverLayerOptions, pathLayerOptions } from '../../constants';
 import { IMapWithPolygonProps, IPolygonFeature } from '../../types';
 import { getColorBasedOnDensity } from '../../utils';
 import { MapLayout } from './map-layout';
@@ -10,18 +11,7 @@ export const MapWithPolygon: FC<IMapWithPolygonProps> = memo(({ containerOptions
 
     const getPathLayerOptions = useCallback((density: number) => ({
         fillColor: getColorBasedOnDensity(density),
-        fillOpacity: 0.7,
-        weight: 2,
-        dashArray: '3',
-        color: 'white'
-    }), []);
-
-    const hoverLayerOptions = useMemo(() => ({
-        fillColor: '#BD0026',
-        fillOpacity: 0.7,
-        weight: 2,
-        opacity: 1,
-        color: 'white'
+        ...pathLayerOptions
     }), []);
 
     const onMouseOver = useCallback((event: LeafletMouseEvent) => {

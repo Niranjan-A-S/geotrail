@@ -1,5 +1,5 @@
 import { LocationEvent } from 'leaflet';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useMapEvents } from 'react-leaflet';
 import { ILocationMarkerProps, ICustomPopupProps as IPlaceDetails } from '../types';
 import { getPlaceDetails } from '../utils';
@@ -18,5 +18,5 @@ export const useCurrentLocation = ({ onLocationFound, coordinates }: ILocationMa
         getPlaceDetails(coordinates).then(setPlaceDetails);
     }, [map, coordinates?.lat, coordinates?.lng]);
 
-    return placeDetails as IPlaceDetails | null;
+    return useMemo(() => ({ placeDetails }), [placeDetails]);
 };

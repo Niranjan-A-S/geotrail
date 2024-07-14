@@ -28,5 +28,18 @@ export const markerIcon = new Icon({
     iconUrl: '/marker.png',
     iconSize: [38, 38]
 });
+export const hoverLayerOptions = {
+    fillColor: '#BD0026',
+    fillOpacity: 0.7,
+    weight: 2,
+    opacity: 1,
+    color: 'white'
+};
+export const pathLayerOptions = {
+    fillOpacity: 0.7,
+    weight: 2,
+    dashArray: '3',
+    color: 'white'
+};
 
 export const GEOAPIFY_API_KEY = import.meta.env.VITE_GEOAPIFY_API_KEY;

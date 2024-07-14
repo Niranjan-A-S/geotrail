@@ -21,7 +21,13 @@ export const FeatureCard: React.FC<{ result: IFeatureProps }> = memo(({ result }
         }
     ), [result]);
 
-    const renderFeatureListItem = useCallback((key: string) => <FeatureListItem key={key} featureName={key} value={(featureListItems as any)[key] || 'N/A'} />, [featureListItems]);
+    const renderFeatureListItem = useCallback((key: string) => (
+        <FeatureListItem
+            key={key}
+            featureName={key}
+            value={(featureListItems as any)[key] || 'N/A'}
+        />
+    ), [featureListItems]);
 
     return (
 

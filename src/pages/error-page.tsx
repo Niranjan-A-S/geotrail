@@ -1,7 +1,7 @@
-import { memo } from 'react';
+import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 
-export const ErrorPage: React.FC = memo(() => (
+export const ErrorPage: FC = memo(() => (
     <div className="flex flex-col items-center justify-center h-screen">
         <h1 className="text-4xl font-bold mb-4">Oops! Something went wrong.</h1>
         <p className="text-lg mb-8">Please refresh the page or try again later.</p>

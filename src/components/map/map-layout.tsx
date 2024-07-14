@@ -9,6 +9,6 @@ export const MapLayout: FC<IMapLayoutProps> = memo(({ containerOptions: { coordi
             attribution={attribution}
             url={url}
         />
-        {onRenderBody()}
+        {onRenderBody && onRenderBody()}
     </MapContainer>
 ));

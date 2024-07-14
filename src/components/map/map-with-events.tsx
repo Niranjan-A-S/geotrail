@@ -14,7 +14,10 @@ export const MapWithEvents: FC<IMapWithEventsProps> = memo(({ containerOptions, 
     }, []);
 
     const renderCurrentLocation = useCallback(() => (
-        <CurrentLocation onLocationFound={handleLocationFound} coordinates={coordinates} />
+        <CurrentLocation
+            onLocationFound={handleLocationFound}
+            coordinates={coordinates}
+        />
     ), [coordinates]);
 
     return (

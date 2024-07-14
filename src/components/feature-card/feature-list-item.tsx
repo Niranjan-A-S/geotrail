@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
+import { IFeatureListItem } from '../../types';
 
-export const FeatureListItem: FC<{ featureName: string; value: string | number | undefined }> = memo(({ featureName, value }) => (
+export const FeatureListItem: FC<IFeatureListItem> = memo(({ featureName, value }) => (
     <p><strong>{featureName}:</strong> {value ?? 'N/A'}</p>
 ));

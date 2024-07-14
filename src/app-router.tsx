@@ -20,14 +20,16 @@ const CurrentLocationMap = withSuspense(
   createElement(Loader)
 );
 
-export const AppRouter = memo(() => <BrowserRouter>
-  <Routes>
-    <Route path="/" element={createElement(HomePage)} />
-    <Route path="map" >
-      <Route path="kerala" element={createElement(KeralaMap)} />
-      <Route path="usa" element={createElement(USAMap)} />
-      <Route path="you-are-here" element={createElement(CurrentLocationMap)} />
-    </Route>
-  </Routes>
-</BrowserRouter>);
+export const AppRouter = memo(() => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={createElement(HomePage)} />
+      <Route path="map" >
+        <Route path="kerala" element={createElement(KeralaMap)} />
+        <Route path="usa" element={createElement(USAMap)} />
+        <Route path="you-are-here" element={createElement(CurrentLocationMap)} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
+));
 

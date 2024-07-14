@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 export interface IMapLayoutProps {
     containerOptions: IMapContainerParams;
     tileLayerOptions: ITileLayerParams;
-    onRenderBody(): ReactNode;
+    onRenderBody?(): ReactNode;
 }
 interface IMapContainerParams {
     coordinates: LatLngExpression;
@@ -91,3 +91,8 @@ export interface IFeature {
         abbreviation_STD: string;
     }
 };
+
+export interface IFeatureListItem {
+    featureName: string;
+    value: string | number | undefined;
+}
