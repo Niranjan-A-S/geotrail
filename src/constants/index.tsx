@@ -28,3 +28,5 @@ export const markerIcon = new Icon({
     iconUrl: '/marker.png',
     iconSize: [38, 38]
 });
+
+export const GEOAPIFY_API_KEY = import.meta.env.VITE_GEOAPIFY_API_KEY;

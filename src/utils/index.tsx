@@ -1,4 +1,5 @@
 import { LatLng } from 'leaflet';
+import { GEOAPIFY_API_KEY } from '../constants';
 
 export function getColorBasedOnDensity(density: number) {
     switch (true) {
@@ -27,10 +28,12 @@ export const fetchData = async (url: string, options?: RequestInit) => {
     return data;
 };
 
+export const getAPIUrl = (coordinates: LatLng | null, apiKey: string) => `https://api.geoapify.com/v1/geocode/reverse?lat=${coordinates?.lat}&lon=${coordinates?.lng}&format=json&apiKey=${apiKey}`;
+
 export const getPlaceDetails = async (coordinates: LatLng | null) => {
     try {
         if (coordinates) {
-            const data = await fetchData(`https://api.geoapify.com/v1/geocode/reverse?lat=${coordinates?.lat}&lon=${coordinates?.lng}&format=json&apiKey=dfdad9f5c56f4c2682cb3a9649cd04b2`);
+            const data = await fetchData(getAPIUrl(coordinates, GEOAPIFY_API_KEY));
             return data?.results[0];
         }
     } catch (error) {
