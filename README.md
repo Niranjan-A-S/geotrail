@@ -8,6 +8,7 @@ This project is a React TypeScript application built with Vite, Tailwind CSS, an
 
 - **Kerala Map with District Markers**: Interactive map highlighting each district of Kerala with markers.
 - **USA State Map with Population Density**: Visual representation of population density across the states using polygon layers.
+- **Current Location**: Your current location on the map along with brief details about the place using external service.
 - **Lazy Loading**: Efficient loading of map components and data to enhance performance.
 
 ## Technologies Used
