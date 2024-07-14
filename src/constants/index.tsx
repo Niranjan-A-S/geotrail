@@ -6,7 +6,8 @@ export enum ROUTE_PATHS {
     map = '/map',
     keralaMap = '/map/kerala',
     usaMap = '/map/usa',
-    currentLocationMap = '/map/you-are-here'
+    currentLocationMap = '/map/you-are-here',
+    wildcard = '*'
 }
 
 

@@ -18,7 +18,7 @@ export const AppRouter = memo(() => (
         <Route path="usa" element={createElement(USAMap)} />
         <Route path="you-are-here" element={createElement(CurrentLocationMap)} />
       </Route>
-      <Route path="*" element={createElement(NotFoundPage)} />
+      <Route path={ROUTE_PATHS.wildcard} element={createElement(NotFoundPage)} />
     </Routes>
   </BrowserRouter>
 ));
