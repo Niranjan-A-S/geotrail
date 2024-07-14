@@ -1,6 +1,11 @@
 import { LatLng, LatLngExpression } from 'leaflet';
 import { ReactNode } from 'react';
 
+export interface IMapLayoutProps {
+    containerOptions: IMapContainerParams;
+    tileLayerOptions: ITileLayerParams;
+    onRenderBody(): ReactNode;
+}
 interface IMapContainerParams {
     coordinates: LatLngExpression;
     zoomLevel: number;
@@ -13,12 +18,6 @@ interface IMapContainerParams {
 interface ITileLayerParams {
     attribution: string;
     url: string;
-}
-
-export interface IMapLayoutProps {
-    containerOptions: IMapContainerParams;
-    tileLayerOptions: ITileLayerParams;
-    onRenderBody(): ReactNode;
 }
 
 export interface IMapWithMarkerProps extends Omit<IMapLayoutProps, 'onRenderBody'> {
@@ -46,10 +45,11 @@ export interface IMapWithPolygonProps extends Omit<IMapLayoutProps, 'onRenderBod
 export interface ICustomMarkerProps extends ICustomPopupProps {
     coordinates: LatLngExpression;
 }
-export interface ICustomPopupProps extends Omit<IDistrict, 'coordinates'> {
-    address_line1?: string;
-    country?: string;
-    state?: string;
+
+export interface ICustomPopupProps extends Partial<IFeature> {
+    name?: string;
+    image?: string;
+    attractions?: Array<string>;
 }
 
 export interface IDistrict extends Pick<IMapContainerParams, 'coordinates'> {
@@ -69,3 +69,25 @@ export interface ILocationMarkerProps {
     onLocationFound: (position: LatLng) => void;
     coordinates: LatLng | null;
 }
+
+export interface IFeature {
+    country: string;
+    state: string;
+    state_district: string;
+    county: string;
+    postcode: string;
+    district: string;
+    suburb: string;
+    lon: number;
+    lat: number;
+    state_code: string;
+    formatted: string;
+    address_line1: string;
+    address_line2: string;
+    distance: number;
+    timezone: {
+        name: string;
+        offset_STD: string;
+        abbreviation_STD: string;
+    }
+};

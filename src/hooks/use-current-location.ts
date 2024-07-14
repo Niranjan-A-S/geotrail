@@ -4,7 +4,7 @@ import { useMapEvents } from 'react-leaflet';
 import { ILocationMarkerProps, ICustomPopupProps as IPlaceDetails } from '../types';
 import { getPlaceDetails } from '../utils';
 
-export const useCurrentLocation = ({ onLocationFound, coordinates }: ILocationMarkerProps): IPlaceDetails | null => {
+export const useCurrentLocation = ({ onLocationFound, coordinates }: ILocationMarkerProps) => {
     const [placeDetails, setPlaceDetails] = useState<IPlaceDetails | null>(null);
     const map = useMapEvents({
         locationfound(event: LocationEvent) {
