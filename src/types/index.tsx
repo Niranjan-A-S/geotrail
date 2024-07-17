@@ -89,7 +89,8 @@ export interface IFeature {
         name: string;
         offset_STD: string;
         abbreviation_STD: string;
-    }
+    },
+    error?: boolean;
 };
 
 export interface IFeatureListItem {

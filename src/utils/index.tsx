@@ -38,7 +38,8 @@ export const getPlaceDetails = async (coordinates: LatLng | null) => {
         }
     } catch (error) {
         return {
-            'address_line1': 'You are here!!'
+            'address_line1': 'You are here!!',
+            error: true
         };
     }
 };
