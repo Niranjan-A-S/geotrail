@@ -20,11 +20,10 @@ docker run -d --name geotrail -p 3000:3000 -e VITE_GEOAPIFY_API_KEY=<YOUR_GEOAPI
 
 - **React**: JavaScript library for building user interfaces.
 - **TypeScript**: Superset of JavaScript for type safety and better development experience.
+- **Docker**: Containerized the application.
 - **Vite**: Fast build tool and development server.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **React Router DOM**: Declarative routing for React applications.
 - **React Leaflet**: React components for Leaflet maps.
 - **Lazy Loading**: Optimization technique to load components and data only when needed.
 - **Error Handling**: Custom error page in case of data fetching error.
-- **Docker**: Containerized the application.
-
