@@ -1,0 +1,11 @@
+node_modules
+yarn.lock
+
+Dockerfile
+.env
+
+.gitignore
+
+README.md
+
+vercel.json

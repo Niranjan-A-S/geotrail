@@ -20,4 +20,5 @@ This project is a React TypeScript application built with Vite, Tailwind CSS, an
 - **React Leaflet**: React components for Leaflet maps.
 - **Lazy Loading**: Optimization technique to load components and data only when needed.
 - **Error Handling**: Custom error page in case of data fetching error.
+- **Docker**: Containerized the application.
 
