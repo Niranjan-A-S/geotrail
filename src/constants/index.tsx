@@ -1,6 +1,8 @@
 import { Icon } from 'leaflet';
 import { IBannerProps as IBannerData } from '../types';
 
+export const APP_NAME = 'Geotrail'
+
 export enum ROUTE_PATHS {
     home = '/',
     map = '/map',
@@ -9,7 +11,6 @@ export enum ROUTE_PATHS {
     currentLocationMap = '/map/you-are-here',
     wildcard = '*'
 }
-
 
 export const BANNER_DATA: Record<string, IBannerData> = {
     kerala: {
