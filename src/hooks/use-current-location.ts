@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { LocationEvent } from 'leaflet';
 import { useEffect, useMemo, useState } from 'react';
 import { useMapEvents } from 'react-leaflet';
@@ -17,7 +18,7 @@ export const useCurrentLocation = ({ onLocationFound, coordinates }: ILocationMa
     useEffect(() => {
         map.locate();
         coordinates && getPlaceDetails(coordinates).then(setPlaceDetails);
-    }, [map, coordinates?.lat, coordinates?.lng, coordinates]);
+    }, [map, coordinates?.lat, coordinates?.lng]);
 
     return useMemo<IPlaceDetails | null>(() => placeDetails, [placeDetails]);
 };

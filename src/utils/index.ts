@@ -23,7 +23,7 @@ export function getColorBasedOnDensity(density: number) {
     }
 }
 
-export const fetchData = async<T = any>(url: string, options?: RequestInit) => {
+export const fetchData = async<T = unknown>(url: string, options?: RequestInit) => {
     const response = await fetch(url, options);
     const data = await response.json();
     return data as T;
