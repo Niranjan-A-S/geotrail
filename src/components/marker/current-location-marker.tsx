@@ -1,21 +1,21 @@
 import { FC, memo } from 'react';
 import { useCurrentLocation } from '../../hooks/use-current-location';
 import { ILocationMarkerProps } from '../../types';
-import { FeatureCard } from '../feature-card';
+import { LocationCard } from '../location-card';
 import { CustomMarker } from './custom-marker';
+import { CURRENT_LOCATION_POPUP_TITLE } from '../../constants';
 
 export const CurrentLocation: FC<ILocationMarkerProps> = memo(({ onLocationFound, coordinates }) => {
-    const details = useCurrentLocation({ onLocationFound, coordinates });
+    const placeDetails = useCurrentLocation({ onLocationFound, coordinates });
 
-    return (coordinates && details) && (
+    return (coordinates) && (
         <>
             <CustomMarker
                 coordinates={coordinates}
-                name={details.address_line1}
-                country={details.country}
-                state={details.state}
+                title={placeDetails?.address_line1 || CURRENT_LOCATION_POPUP_TITLE}
+                subtitle={`${placeDetails?.state}, ${placeDetails?.country}`}
             />
-            {!details.error && <FeatureCard result={details} />}
+            {placeDetails && <LocationCard data={placeDetails} />}
         </>
     );
 });

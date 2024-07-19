@@ -4,14 +4,13 @@ import { markerIcon } from '../../constants';
 import { ICustomMarkerProps } from '../../types';
 import { CustomPopup } from './custom-popup';
 
-export const CustomMarker: FC<ICustomMarkerProps> = memo(({ coordinates, attractions, name, image, country, state }) => (
+export const CustomMarker: FC<ICustomMarkerProps> = memo(({ coordinates, title, image, list, subtitle }) => (
     <Marker position={coordinates} icon={markerIcon} >
         <CustomPopup
-            attractions={attractions}
-            name={name}
+            list={list}
+            title={title}
             image={image}
-            country={country}
-            state={state}
+            subtitle={subtitle}
         />
     </Marker>
 ));

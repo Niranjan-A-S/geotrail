@@ -1,22 +1,23 @@
 import { LocationEvent } from 'leaflet';
 import { useEffect, useMemo, useState } from 'react';
 import { useMapEvents } from 'react-leaflet';
-import { ILocationMarkerProps, ICustomPopupProps as IPlaceDetails } from '../types';
+import { ILocationMarkerProps, IPlaceDetails } from '../types';
 import { getPlaceDetails } from '../utils';
 
 export const useCurrentLocation = ({ onLocationFound, coordinates }: ILocationMarkerProps) => {
     const [placeDetails, setPlaceDetails] = useState<IPlaceDetails | null>(null);
+
     const map = useMapEvents({
-        locationfound(event: LocationEvent) {
-            map.flyTo(event.latlng, map.getZoom());
-            onLocationFound(event.latlng);
+        locationfound({ latlng }: LocationEvent) {
+            map.flyTo(latlng, map.getZoom());
+            onLocationFound(latlng);
         }
     });
 
     useEffect(() => {
         map.locate();
-        getPlaceDetails(coordinates).then(setPlaceDetails);
+        coordinates && getPlaceDetails(coordinates).then(setPlaceDetails);
     }, [map, coordinates?.lat, coordinates?.lng]);
 
-    return useMemo(() => (placeDetails), [placeDetails]);
+    return useMemo<IPlaceDetails | null>(() => placeDetails, [placeDetails]);
 };

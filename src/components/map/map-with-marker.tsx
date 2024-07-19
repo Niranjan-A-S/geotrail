@@ -1,18 +1,20 @@
 import 'leaflet/dist/leaflet.css';
 import { FC, memo, useCallback } from 'react';
-import { ICustomMarkerProps, IMapWithMarkerProps } from '../../types';
+import { DISTRICT_POPUP_SUBTITLE } from '../../constants';
+import { IDistrict, IMapWithMarkerProps } from '../../types';
 import { CustomMarker } from '../marker/custom-marker';
 import { MapLayout } from './map-layout';
 
 export const MapWithMarker: FC<IMapWithMarkerProps> = memo(({ containerOptions, tileLayerOptions, districts }) => {
 
-    const renderMarkers = useCallback(() => districts.map(({ coordinates, attractions, name, image }: ICustomMarkerProps) => (
+    const renderMarkers = useCallback(() => districts.map(({ coordinates, attractions, image, name }: IDistrict) => (
         <CustomMarker
             key={name}
-            name={name}
+            title={name}
             coordinates={coordinates}
-            attractions={attractions}
+            list={attractions}
             image={image}
+            subtitle={DISTRICT_POPUP_SUBTITLE}
         />
     )), [districts]);
 

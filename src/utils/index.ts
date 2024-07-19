@@ -1,5 +1,6 @@
 import { LatLng } from 'leaflet';
 import { GEOAPIFY_API_KEY } from '../constants';
+import { IPlaceDetails } from '../types';
 
 export function getColorBasedOnDensity(density: number) {
     switch (true) {
@@ -22,24 +23,22 @@ export function getColorBasedOnDensity(density: number) {
     }
 }
 
-export const fetchData = async (url: string, options?: RequestInit) => {
+export const fetchData = async<T = any>(url: string, options?: RequestInit) => {
     const response = await fetch(url, options);
     const data = await response.json();
-    return data;
+    return data as T;
 };
 
 export const getAPIUrl = (coordinates: LatLng | null, apiKey: string) => `https://api.geoapify.com/v1/geocode/reverse?lat=${coordinates?.lat}&lon=${coordinates?.lng}&format=json&apiKey=${apiKey}`;
 
-export const getPlaceDetails = async (coordinates: LatLng | null) => {
+export const getPlaceDetails = async (coordinates: LatLng): Promise<IPlaceDetails | null> => {
     try {
-        if (coordinates) {
-            const data = await fetchData(getAPIUrl(coordinates, GEOAPIFY_API_KEY));
-            return data?.results[0];
-        }
+        const data = await fetchData<{ results: IPlaceDetails[] }>(getAPIUrl(coordinates, GEOAPIFY_API_KEY));
+
+        if (Array.isArray(!data?.results)) throw Error('Not able to fetch the place details');
+        return data.results[0];
+
     } catch (error) {
-        return {
-            'address_line1': 'You are here!!',
-            error: true
-        };
+        return null
     }
 };

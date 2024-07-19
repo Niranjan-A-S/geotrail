@@ -46,16 +46,17 @@ export interface ICustomMarkerProps extends ICustomPopupProps {
     coordinates: LatLngExpression;
 }
 
-export interface ICustomPopupProps extends Partial<IFeature> {
-    name?: string;
+export interface ICustomPopupProps {
+    title: string;
+    subtitle?: string;
     image?: string;
-    attractions?: Array<string>;
+    list?: Array<string>;
 }
 
 export interface IDistrict extends Pick<IMapContainerParams, 'coordinates'> {
-    name?: string;
-    image?: string;
-    attractions?: Array<string>;
+    name: string;
+    image: string;
+    attractions: Array<string>;
 }
 
 export interface IBannerProps {
@@ -70,7 +71,7 @@ export interface ILocationMarkerProps {
     coordinates: LatLng | null;
 }
 
-export interface IFeature {
+export interface IPlaceDetails {
     country: string;
     state: string;
     state_district: string;
@@ -89,11 +90,10 @@ export interface IFeature {
         name: string;
         offset_STD: string;
         abbreviation_STD: string;
-    },
-    error?: boolean;
+    }
 };
 
-export interface IFeatureListItem {
-    featureName: string;
+export interface ICardListItem {
+    name: string;
     value: string | number | undefined;
 }

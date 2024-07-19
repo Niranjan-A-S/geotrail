@@ -13,7 +13,7 @@ export const useFetch = <T>(endpoint: string, options?: RequestInit): IResponse<
     useEffect(() => {
         (async () => {
             try {
-                const data = await fetchData(endpoint, options);
+                const data = await fetchData<T>(endpoint, options);
                 setData(data);
             } catch (error) {
                 setHasError(true);

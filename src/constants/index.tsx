@@ -53,3 +53,7 @@ export const pathLayerOptions = {
 };
 
 export const GEOAPIFY_API_KEY = import.meta.env.VITE_GEOAPIFY_API_KEY;
+
+export const DISTRICT_POPUP_SUBTITLE = 'Major Attractions:'
+
+export const CURRENT_LOCATION_POPUP_TITLE = 'You are here!';
