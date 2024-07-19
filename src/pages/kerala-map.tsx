@@ -7,7 +7,7 @@ import { ErrorPage } from './error-page.tsx';
 
 export default memo(() => {
 
-    const { data, hasError } = useFetch<IMarkerMapOptions>('/map-data/marker.json');
+    const { data, hasError } = useFetch<IMarkerMapOptions>('/map-data/kerala.json');
 
     if (hasError) return <ErrorPage />;
 

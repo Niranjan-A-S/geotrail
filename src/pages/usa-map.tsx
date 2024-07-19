@@ -8,7 +8,7 @@ import { ErrorPage } from './error-page';
 
 export default memo(() => {
 
-    const { data, hasError } = useFetch<IMapWithPolygonProps>('/map-data/polygon.json');
+    const { data, hasError } = useFetch<IMapWithPolygonProps>('/map-data/usa.json');
 
     if (hasError) return <ErrorPage />;
 

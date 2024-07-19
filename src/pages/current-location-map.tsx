@@ -7,7 +7,7 @@ import { ErrorPage } from './error-page';
 
 export default memo(() => {
 
-    const { data, hasError } = useFetch<IMapWithEventsProps>('/map-data/events.json');
+    const { data, hasError } = useFetch<IMapWithEventsProps>('/map-data/default.json');
 
     if (hasError) return <ErrorPage />;
 
