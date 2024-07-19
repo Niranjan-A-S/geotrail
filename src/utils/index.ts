@@ -1,5 +1,5 @@
 import { LatLng } from 'leaflet';
-import { GEOAPIFY_API_KEY } from '../constants';
+import { GEOAPIFY_API_KEY, pathLayerOptions } from '../constants';
 import { IPlaceDetails } from '../types';
 
 export function getColorBasedOnDensity(density: number) {
@@ -22,6 +22,11 @@ export function getColorBasedOnDensity(density: number) {
             return '#FFEDA0';
     }
 }
+
+export const getPathLayerOptions = (density: number) => ({
+    fillColor: getColorBasedOnDensity(density),
+    ...pathLayerOptions
+});
 
 export const fetchData = async<T = unknown>(url: string, options?: RequestInit) => {
     const response = await fetch(url, options);

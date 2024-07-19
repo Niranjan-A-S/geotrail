@@ -97,3 +97,8 @@ export interface ICardListItem {
     name: string;
     value: string | number | undefined;
 }
+
+export interface IDensityCardProps {
+    name: string;
+    density: number;
+}

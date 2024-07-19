@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
-import { useLocationCardList } from '../../hooks/use-location-card-list';
-import { IPlaceDetails } from '../../types';
+import { useLocationCardList } from '../../../hooks/use-location-card-list';
+import { IPlaceDetails } from '../../../types';
 import { CardListItem } from './list-item';
 
 export const LocationCard: React.FC<{ data: IPlaceDetails }> = memo(({ data }) => {

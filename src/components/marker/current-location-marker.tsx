@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { useCurrentLocation } from '../../hooks/use-current-location';
 import { ILocationMarkerProps } from '../../types';
-import { LocationCard } from '../location-card';
+import { LocationCard } from '../card/location-card';
 import { CustomMarker } from './custom-marker';
 import { CURRENT_LOCATION_POPUP_TITLE } from '../../constants';
 

@@ -1,50 +1,44 @@
-import { LeafletMouseEvent } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FC, memo, useCallback } from 'react';
 import { Polygon } from 'react-leaflet';
-import { hoverLayerOptions, pathLayerOptions } from '../../constants';
+import { usePolygonLayer } from '../../hooks/use-polygon-layer';
 import { IMapWithPolygonProps, IPolygonFeature } from '../../types';
-import { getColorBasedOnDensity } from '../../utils';
+import { getPathLayerOptions } from '../../utils';
+import { DensityCard } from '../card/density-card';
 import { MapLayout } from './map-layout';
 
 export const MapWithPolygon: FC<IMapWithPolygonProps> = memo(({ containerOptions, tileLayerOptions, features }) => {
 
-    const getPathLayerOptions = useCallback((density: number) => ({
-        fillColor: getColorBasedOnDensity(density),
-        ...pathLayerOptions
-    }), []);
+    const { activeLayerData, onMouseOut, onMouseOver } = usePolygonLayer();
 
-    const onMouseOver = useCallback((event: LeafletMouseEvent) => {
-        const layer = event.target;
-        layer.setStyle(hoverLayerOptions);
-    }, []);
-
-    const onMouseOut = useCallback((event: LeafletMouseEvent, density: number) => {
-        const layer = event.target;
-        layer.setStyle(getPathLayerOptions(density));
-    }, [getPathLayerOptions]);
-
-    const renderPolygons = useCallback(() => features.map(({ geometry, properties: { density }, id }: IPolygonFeature) => {
-        const coordinates = geometry.coordinates[0].map((item) => [item[1], item[0]]);
+    const renderPolygons = useCallback(() => features.map(({ geometry, properties, id }: IPolygonFeature) => {
+        const coordinates = geometry.coordinates[0].map(([a, b]) => [b, a]);
         return (
             <Polygon
                 key={id}
-                pathOptions={getPathLayerOptions(density)}
+                pathOptions={getPathLayerOptions(properties.density)}
                 positions={coordinates}
                 eventHandlers={{
-                    mouseover: onMouseOver,
-                    mouseout: (e) => { onMouseOut(e, density); }
+                    mouseover: (e) => onMouseOver(e, properties),
+                    mouseout: onMouseOut
                 }}
             />
         );
     }
-    ), [features, getPathLayerOptions, onMouseOut, onMouseOver]);
+    ), [features, onMouseOut, onMouseOver]);
+
+    const onRenderBody = useCallback(() => (
+        <>
+            {renderPolygons()}
+            {activeLayerData && <DensityCard data={activeLayerData} />}
+        </>
+    ), [activeLayerData, renderPolygons]);
 
     return (
         <MapLayout
             containerOptions={containerOptions}
             tileLayerOptions={tileLayerOptions}
-            onRenderBody={renderPolygons}
+            onRenderBody={onRenderBody}
         />
     );
 });

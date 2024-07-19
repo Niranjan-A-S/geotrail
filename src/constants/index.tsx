@@ -39,13 +39,7 @@ export const markerIcon = new Icon({
     iconUrl: '/images/marker.png',
     iconSize: [38, 38]
 });
-export const hoverLayerOptions = {
-    fillColor: '#BD0026',
-    fillOpacity: 0.7,
-    weight: 2,
-    opacity: 1,
-    color: 'white'
-};
+
 export const pathLayerOptions = {
     fillOpacity: 0.7,
     weight: 2,
