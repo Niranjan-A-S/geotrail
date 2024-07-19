@@ -18,7 +18,7 @@ export const MapWithEvents: FC<IMapWithEventsProps> = memo(({ containerOptions, 
             onLocationFound={handleLocationFound}
             coordinates={coordinates}
         />
-    ), [coordinates]);
+    ), [coordinates, handleLocationFound]);
 
     return (
         <MapLayout

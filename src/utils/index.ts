@@ -39,6 +39,6 @@ export const getPlaceDetails = async (coordinates: LatLng): Promise<IPlaceDetail
         return data.results[0];
 
     } catch (error) {
-        return null
+        return null;
     }
 };

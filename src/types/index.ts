@@ -91,7 +91,7 @@ export interface IPlaceDetails {
         offset_STD: string;
         abbreviation_STD: string;
     }
-};
+}
 
 export interface ICardListItem {
     name: string;

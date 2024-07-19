@@ -20,7 +20,7 @@ export const LocationCard: React.FC<{ data: IPlaceDetails }> = memo(({ data }) =
             Distance: distance?.toFixed(2) + ' km',
             Timezone: timezone?.name + ' (' + timezone?.abbreviation_STD + ')'
         }
-    ), [data]);
+    ), [country, county, distance, lat, lon, postcode, state, state_code, state_district, suburb, timezone?.abbreviation_STD, timezone?.name]);
 
     const renderFeatureListItem = useCallback((key: string) => (
         <CardListItem

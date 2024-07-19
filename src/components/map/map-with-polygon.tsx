@@ -17,7 +17,7 @@ export const MapWithPolygon: FC<IMapWithPolygonProps> = memo(({ containerOptions
     const onMouseOver = useCallback((event: LeafletMouseEvent) => {
         const layer = event.target;
         layer.setStyle(hoverLayerOptions);
-    }, [hoverLayerOptions]);
+    }, []);
 
     const onMouseOut = useCallback((event: LeafletMouseEvent, density: number) => {
         const layer = event.target;
