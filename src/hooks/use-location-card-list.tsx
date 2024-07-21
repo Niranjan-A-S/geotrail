@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { IPlaceDetails } from "../types";
+import { getFormattedDistance, getFormattedTimezone } from "../utils";
 
 export const useLocationCardList = (data: IPlaceDetails) => {
     const { country, county, distance, lat, lon, postcode, state, state_code, state_district, suburb, timezone } = useMemo(() => data, [data]);
@@ -15,10 +16,10 @@ export const useLocationCardList = (data: IPlaceDetails) => {
             Latitude: lat,
             Longitude: lon,
             StateCode: state_code,
-            Distance: distance?.toFixed(2) + ' km',
-            Timezone: timezone?.name + ' (' + timezone?.abbreviation_STD + ')'
+            Distance: getFormattedDistance(distance),
+            Timezone: getFormattedTimezone(timezone)
         }
-    ), [country, county, distance, lat, lon, postcode, state, state_code, state_district, suburb, timezone?.abbreviation_STD, timezone?.name]);
+    ), [country, county, distance, lat, lon, postcode, state, state_code, state_district, suburb, timezone]);
 
     return useMemo(() => listItems, [listItems]);
 

@@ -71,6 +71,12 @@ export interface ILocationMarkerProps {
     coordinates: LatLng | null;
 }
 
+export interface ITimezone {
+    name: string;
+    offset_STD: string;
+    abbreviation_STD: string;
+}
+
 export interface IPlaceDetails {
     country: string;
     state: string;
@@ -86,11 +92,7 @@ export interface IPlaceDetails {
     address_line1: string;
     address_line2: string;
     distance: number;
-    timezone: {
-        name: string;
-        offset_STD: string;
-        abbreviation_STD: string;
-    }
+    timezone: ITimezone;
 }
 
 export interface ICardListItem {

@@ -1,6 +1,6 @@
 import { LatLng } from 'leaflet';
 import { GEOAPIFY_API_KEY, pathLayerOptions } from '../constants';
-import { IPlaceDetails } from '../types';
+import { IPlaceDetails, ITimezone } from '../types';
 
 export function getColorBasedOnDensity(density: number) {
     switch (true) {
@@ -47,3 +47,7 @@ export const getPlaceDetails = async (coordinates: LatLng): Promise<IPlaceDetail
         return null;
     }
 };
+
+export const getFormattedDistance = (distance: number, unit: string = 'KM') => `${distance?.toFixed(2)} ${unit}`;
+
+export const getFormattedTimezone = ({ abbreviation_STD, name }: ITimezone) => `${name} (${abbreviation_STD})`;
