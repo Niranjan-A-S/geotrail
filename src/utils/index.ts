@@ -40,7 +40,7 @@ export const getPlaceDetails = async (coordinates: LatLng): Promise<IPlaceDetail
     try {
         const data = await fetchData<{ results: IPlaceDetails[] }>(getAPIUrl(coordinates, GEOAPIFY_API_KEY));
 
-        if (Array.isArray(!data?.results)) throw Error('Not able to fetch the place details');
+        if (!Array.isArray(data?.results)) throw Error('Not able to fetch the place details');
         return data.results[0];
 
     } catch (error) {

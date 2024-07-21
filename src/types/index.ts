@@ -48,7 +48,7 @@ export interface ICustomMarkerProps extends ICustomPopupProps {
 
 export interface ICustomPopupProps {
     title: string;
-    subtitle?: string;
+    subtitle?: string | null;
     image?: string;
     list?: Array<string>;
 }
