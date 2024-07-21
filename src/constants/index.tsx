@@ -53,3 +53,12 @@ export const DISTRICT_POPUP_SUBTITLE = 'Major Attractions:';
 
 export const CURRENT_LOCATION_POPUP_TITLE = 'You are here!';
 
+export enum ErrorPageParams {
+    heading = 'Oops! Something went wrong.',
+    message = 'Please refresh the page or try again later.'
+}
+
+export enum NotFoundPageParams {
+    heading = 'Oops! 404',
+    message = 'Page not found.'
+}
