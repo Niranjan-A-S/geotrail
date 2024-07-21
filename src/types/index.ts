@@ -104,3 +104,8 @@ export interface IDensityCardProps {
     name: string;
     density: number;
 }
+
+export interface ILinkButtonProps {
+    url: string;
+    label: string;
+}

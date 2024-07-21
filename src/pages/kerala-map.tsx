@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Loader } from '../components/loader.tsx';
+import { Loader } from '../components/ui/loader.tsx';
 import { MapWithMarker } from '../components/map/map-with-marker.tsx';
 import { useFetch } from '../hooks/use-fetch.ts';
 import { IMapWithMarkerProps as IMarkerMapOptions } from '../types/index.tsx';
