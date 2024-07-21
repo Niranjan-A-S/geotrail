@@ -3,7 +3,7 @@ import { useLocationCardList } from '../../../hooks/use-location-card-list';
 import { IPlaceDetails } from '../../../types';
 import { CardListItem } from './list-item';
 
-export const LocationCard: React.FC<{ data: IPlaceDetails }> = memo(({ data }) => {
+export const LocationDetailsCard: React.FC<{ data: IPlaceDetails }> = memo(({ data }) => {
 
     const listItems = useLocationCardList(data);
 

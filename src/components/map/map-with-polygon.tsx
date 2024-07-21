@@ -4,7 +4,7 @@ import { Polygon } from 'react-leaflet';
 import { usePolygonLayer } from '../../hooks/use-polygon-layer';
 import { IMapWithPolygonProps, IPolygonFeature } from '../../types';
 import { getPathLayerOptions } from '../../utils';
-import { DensityCard } from '../card/density-card';
+import { DensityCard } from '../card/density';
 import { MapLayout } from './map-layout';
 
 export const MapWithPolygon: FC<IMapWithPolygonProps> = memo(({ containerOptions, tileLayerOptions, features }) => {
