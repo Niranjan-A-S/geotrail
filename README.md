@@ -12,7 +12,7 @@ docker run -d --name geotrail -p 3000:3000 -e VITE_GEOAPIFY_API_KEY=<YOUR_GEOAPI
 
 ## Features
 
-- **Kerala Map with District Markers**: Interactive map highlighting each district of Kerala with markers.
+- **Kerala Map with District Markers**: Interactive map highlighting each district of Kerala with markers along with cluster marker support.
 - **USA State Map with Population Density**: Visual representation of population density across the states using polygon layers.
 - **Current Location**: Your current location on the map along with brief details about the place using external service.
 
